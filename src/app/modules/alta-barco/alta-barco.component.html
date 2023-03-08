@@ -1,0 +1,152 @@
+<h2>Dar de alta un barco</h2>
+<h5>¿Cuantos de estos campos son obligatorios?</h5>
+<div class="container">
+  <form class="form-group" [formGroup]="altaBarcoForm">
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">Name</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="name" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('name')?.touched &&  altaBarcoForm.get('name')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">Flag</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="flag" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('flag')?.touched &&  altaBarcoForm.get('flag')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">IMO</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="imo" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('imo')?.touched &&  altaBarcoForm.get('imo')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">Call Sign</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="callSign" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('callSign')?.touched &&  altaBarcoForm.get('callSign')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">DWT</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="dwt" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('dwt')?.touched &&  altaBarcoForm.get('dwt')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">BUILT</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="built" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('built')?.touched &&  altaBarcoForm.get('built')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">BEAM</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="beam" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('beam')?.touched &&  altaBarcoForm.get('beam')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">LOA</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="loa" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('loa')?.touched &&  altaBarcoForm.get('loa')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">GRT</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="grt" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('grt')?.touched &&  altaBarcoForm.get('grt')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">NRT</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="nrt" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('nrt')?.touched &&  altaBarcoForm.get('nrt')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">H/H</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="hH" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('hH')?.touched &&  altaBarcoForm.get('hH')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">CRANES</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="cranes" />
+      </div>
+      <div
+        *ngIf="altaBarcoForm.get('cranes')?.touched &&  altaBarcoForm.get('cranes')?.errors?.['required']"
+        class="alert alert-danger">
+        Campo requerido
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-3">
+        <button (click)="onSubmit()" type="button" class="btn btn-primary">
+          Guardar barco
+        </button>
+        <button
+          (click)="getVessels()"
+          type="button"
+          class="btn btn-primary m-2">
+          Get data
+        </button>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </form>
+</div>

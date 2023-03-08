@@ -1,0 +1,39 @@
+{
+  "vessels": [
+    {
+      "id": "Pola2000",
+      "values": {
+        "name": "Pola",
+        "flag": "Panam",
+        "imo": "IMO",
+        "callSign": "call",
+        "dwt": "35000",
+        "built": "2000",
+        "beam": "200",
+        "loa": "150",
+        "grt": "40000",
+        "nrt": "23000",
+        "hH": "1000",
+        "cranes": "10000"
+      }
+    },
+    {
+      "id": "Olden2020",
+      "values": {
+        "name": "Olden",
+        "flag": "CRT",
+        "imo": "IMO",
+        "callSign": "Call",
+        "dwt": "DWT",
+        "built": "2020",
+        "beam": "BEAM",
+        "loa": "LOA",
+        "grt": "GRT",
+        "nrt": "NRt",
+        "hH": "Hh",
+        "cranes": "cranes"
+      }
+    }
+  ],
+  "registers": []
+}
