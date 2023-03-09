@@ -1,5 +1,5 @@
 <form class="form-group" [formGroup]="nuevoRegistroForm">
-  <h2>Primeras opciones</h2>
+  <h3 class="mt-2">Primeras opciones</h3>
   <div ngClass="form-group">
     <label for="formGroupVesselInput"
       >Seleccione el buque con el que va a trabajar</label
@@ -11,7 +11,7 @@
       </option>
     </select>
   </div>
-  <div ngClass="form group">
+  <div ngClass="form group" class="mt-2">
     <label for="formSelectGroup"
       >Seleccione si es importacion o exportacion</label
     >
@@ -21,25 +21,17 @@
     </select>
   </div>
 
-  <h2>Cargo details</h2>
+  <h3 class="mt-4">Cargo details</h3>
   <div ngClass="form-group row mt-2">
     <label for="" ngClass="col-2">LOADING PORT</label>
     <div ngClass="col">
-      <input
-        type="text"
-        ngClass="form-control"
-        id=""
-        formControlName="loadingPort" />
+      <input type="text" ngClass="form-control" formControlName="loadingPort" />
     </div>
   </div>
   <div ngClass="form-group row mt-2">
     <label for="" ngClass="col-2">TOTAL SHIPMENT</label>
     <div ngClass="col">
-      <input
-        type="text"
-        ngClass="form-control"
-        id=""
-        formControlName="totalShipment" />
+      <input type="text" class="form-control" formControlName="totalShipment" />
     </div>
   </div>
   <div ngClass="form-group row mt-2">
@@ -47,16 +39,13 @@
     <div ngClass="col">
       <input
         type="text"
-        ngClass="form-control"
-        id=""
+        class="form-control"
         formControlName="maxArrivalDraft" />
     </div>
   </div>
-
+  <h3 class="mt-4">Añadir puertos</h3>
   <div>
-    <h2>Port Calls</h2>
     <div class="form-group row">
-      <label class="col-2">Añadir puerto</label>
       <div class="col-3">
         <select #selection class="form-control custom-select">
           <option *ngFor="let port of portsList">
@@ -67,40 +56,75 @@
       <button
         (click)="addPort(selection.value)"
         type="button"
-        class="btn btn-primary col-2">
+        class="btn btn-primary col-3">
         Añadir puerto
       </button>
     </div>
-    <hr />
+    <h3 class="mt-4">Port Calls</h3>
     <div class="form-group row">
       <div class="col-3">
-        <label>Port</label>
+        <label>Puerto</label>
       </div>
       <div class="col-3">
         <label>Cantidad</label>
       </div>
     </div>
-    <div *ngFor="let port of workingPorts">
-      {{ port }}
+    <div *ngFor="let port of workingPorts" class="form-group row mt-2">
+      <div class="input-group">
+        <div class="input-group-prepend col-3">
+          <span class="input-group-text" id="">{{ port }}</span>
+        </div>
+        <input
+          type="text"
+          class="form-control col-3"
+          formControlName="portCalls" />
+      </div>
     </div>
   </div>
 
-  <h2>Stowage Plan</h2>
+  <h3 class="mt-4">Stowage Plan</h3>
   <div class="form-group">
-    <label for="" ngClass="col">Hold </label>
-    <label for="" ngClass="col">Cargo </label>
-    <label for="" ngClass="col">General </label>
-    <label for="" ngClass="col">Port </label>
+    <label class="col-3">Puerto</label>
+    <label class="col-3">Hold </label>
+    <label class="col-3">Cargo </label>
+    <label class="col-3">General </label>
+    <div *ngFor="let port of workingPorts" class="form-group row mt-2">
+      <div class="input-group">
+        <div class="input-group-prepend col-3">
+          <span class="input-group-text" id="">{{ port }}</span>
+        </div>
+        <input type="text" class="form-control col-3" />
+        <input type="text" class="form-control col-3" />
+        <input type="text" class="form-control col-3" />
+      </div>
+    </div>
   </div>
 
-  <h2>Calados</h2>
+  <h3 class="mt-4">Calados</h3>
   <div class="form-group">
-    <label for="" ngClass="col">Puerto </label>
-    <label for="" ngClass="col">Foreward </label>
-    <label for="" ngClass="col">Afterward </label>
+    <label class="col-3">Puerto</label>
+    <label class="col-3">Foreward </label>
+    <label class="col-3">Afterward </label>
+    <div *ngFor="let port of workingPorts" class="form-group row mt-2">
+      <div class="input-group">
+        <div class="input-group-prepend col-3">
+          <span class="input-group-text" id="">{{ port }}</span>
+        </div>
+        <div class="col-3">
+          <input type="text" class="form-control col-3" />
+        </div>
+        <div class="col-3">
+          <input type="text" class="form-control col-3" />
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h2>Destinatarios y recibidores</h2>
-  <footer [ngStyle]="{ width: '100%', height: '10px' }"></footer>
+  <h3 class="mt-4">Destinatarios y recibidores</h3>
+  <div class="mb-4">
+    <button (click)="onSubmit()" type="button" class="btn btn-primary">Guardar registro</button>
+  </div>
+  <div></div>
   <button ngClass="btn btn-primary">Datos de facturacion</button>
+  <footer [ngStyle]="{ width: '100%', height: '10px' }"></footer>
 </form>

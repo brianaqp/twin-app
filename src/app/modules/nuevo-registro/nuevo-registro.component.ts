@@ -13,7 +13,7 @@ export class NuevoRegistroComponent implements OnInit {
   nuevoRegistroForm!: FormGroup;
   vesselsList: any[] = [];
   portsList = [...Ports];
-  workingPorts: string[] = [];
+  workingPorts: string[] = ['Coatzacoalcos', 'Manzanillo'];
   selection!: string;
 
   constructor(
@@ -37,6 +37,7 @@ export class NuevoRegistroComponent implements OnInit {
       loadingPort: ['', [Validators.required]],
       totalShipment: ['', [Validators.required]],
       maxArrivalDraft: ['', [Validators.required]],
+      portCalls: [],
     });
   }
 
@@ -50,5 +51,9 @@ export class NuevoRegistroComponent implements OnInit {
     console.log('working ports ->', this.workingPorts);
     console.log('changed port list ->', this.portsList);
     console.log(this.selection);
+  }
+
+  onSubmit(): void {
+    console.log(this.nuevoRegistroForm.value);
   }
 }

@@ -33,6 +33,23 @@
         "hH": "Hh",
         "cranes": "cranes"
       }
+    },
+    {
+      "id": "Aida",
+      "values": {
+        "name": "Aida",
+        "flag": "",
+        "imo": "",
+        "callSign": "",
+        "dwt": "",
+        "built": "",
+        "beam": "",
+        "loa": "",
+        "grt": "",
+        "nrt": "",
+        "hH": "",
+        "cranes": ""
+      }
     }
   ],
   "registers": []
