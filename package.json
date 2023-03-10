@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "server": "json-server --watch --host 192.168.0.201 src/app/database/db.json http://192.168.100.17"
+    "server": "json-server --watch --host 192.168.100.17 src/app/database/db.json http://192.168.100.17"
   },
   "private": true,
   "dependencies": {
