@@ -8,3 +8,16 @@ export interface Register {
   stowagePlan: object[];
   calados: object[];
 }
+
+interface format {
+  destinarario: string;
+  nombres: string[];
+}
+
+export interface destinarios {
+  armandor: format;
+  trader: format[];
+  recibidor: format[];
+  agenteAduanal: format[];
+  otros: format[];
+}

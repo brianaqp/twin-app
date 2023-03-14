@@ -1,56 +1,40 @@
 {
   "vessels": [
     {
-      "id": "Pola2000",
-      "values": {
+      "id": "Pola2023",
+      "shipParticulars": {
         "name": "Pola",
-        "flag": "Panam",
+        "flag": "Pan",
         "imo": "IMO",
-        "callSign": "call",
-        "dwt": "35000",
-        "built": "2000",
-        "beam": "200",
-        "loa": "150",
-        "grt": "40000",
-        "nrt": "23000",
-        "hH": "1000",
-        "cranes": "10000"
-      }
+        "callSign": "CS",
+        "dwt": "DW",
+        "built": "2023",
+        "beam": "BEAM",
+        "loa": "LOA",
+        "grt": "GRT",
+        "nrt": "NRT",
+        "hH": "Hh",
+        "cranes": "Cranes"
+      },
+      "registers": []
     },
     {
       "id": "Olden2020",
-      "values": {
+      "shipParticulars": {
         "name": "Olden",
-        "flag": "CRT",
+        "flag": "Pan",
         "imo": "IMO",
-        "callSign": "Call",
-        "dwt": "DWT",
+        "callSign": "CS",
+        "dwt": "DW",
         "built": "2020",
         "beam": "BEAM",
         "loa": "LOA",
         "grt": "GRT",
-        "nrt": "NRt",
+        "nrt": "NRT",
         "hH": "Hh",
-        "cranes": "cranes"
-      }
-    },
-    {
-      "id": "Aida",
-      "values": {
-        "name": "Aida",
-        "flag": "",
-        "imo": "",
-        "callSign": "",
-        "dwt": "",
-        "built": "",
-        "beam": "",
-        "loa": "",
-        "grt": "",
-        "nrt": "",
-        "hH": "",
-        "cranes": ""
-      }
+        "cranes": "Cranes"
+      },
+      "registers": []
     }
-  ],
-  "registers": []
+  ]
 }

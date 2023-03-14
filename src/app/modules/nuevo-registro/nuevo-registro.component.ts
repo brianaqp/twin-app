@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { VesselsService } from 'src/app/services/vessels.service';
 import { Validators } from '@angular/forms';
@@ -24,7 +24,7 @@ export class NuevoRegistroComponent implements OnInit {
   ngOnInit(): void {
     this.vesselSvc.get().subscribe(res => {
       this.vesselsList = [...res];
-      console.log(this.vesselsList);
+      console.log('vesselList ->', this.vesselsList);
     });
     this.nuevoRegistroForm = this.initForm();
   }
@@ -37,20 +37,28 @@ export class NuevoRegistroComponent implements OnInit {
       loadingPort: ['', [Validators.required]],
       totalShipment: ['', [Validators.required]],
       maxArrivalDraft: ['', [Validators.required]],
-      portCalls: [],
+      portCalls: this.fb.group({}),
+      stowagePlan: [{}],
     });
   }
 
   addPort(portSelected: string): void {
     console.log('port selected ->', portSelected);
     this.workingPorts.push(portSelected);
+    // Elimina el puerto buscando el index
     const index = this.portsList.indexOf(portSelected, 0);
     if (index > -1) {
       this.portsList.splice(index, 1);
     }
-    console.log('working ports ->', this.workingPorts);
-    console.log('changed port list ->', this.portsList);
-    console.log(this.selection);
+    // Version funciona, no optima
+    // const myPropertyControl = this.nuevoRegistroForm.get(
+    //   'portCalls'
+    // ) as FormGroup;
+    // const control = this.fb.control({
+    //   amount: 1,
+    // });
+    // myPropertyControl.setControl(portSelected, control);
+    // console.log(this.nuevoRegistroForm.value);
   }
 
   onSubmit(): void {

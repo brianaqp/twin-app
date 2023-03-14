@@ -7,7 +7,7 @@
     <select class="form-control" formControlName="vessel">
       <option selected default>...</option>
       <option *ngFor="let vessel of vesselsList">
-        {{ vessel.values.name }}, {{ vessel.values.built }}
+        {{ vessel.shipParticulars.name }}, {{ vessel.shipParticulars.built }}
       </option>
     </select>
   </div>
@@ -72,12 +72,9 @@
     <div *ngFor="let port of workingPorts" class="form-group row mt-2">
       <div class="input-group">
         <div class="input-group-prepend col-3">
-          <span class="input-group-text" id="">{{ port }}</span>
+          <span class="input-group-text">{{ port }}</span>
         </div>
-        <input
-          type="text"
-          class="form-control col-3"
-          formControlName="portCalls" />
+        <input type="text" class="form-control col-3" />
       </div>
     </div>
   </div>
@@ -122,7 +119,9 @@
 
   <h3 class="mt-4">Destinatarios y recibidores</h3>
   <div class="mb-4">
-    <button (click)="onSubmit()" type="button" class="btn btn-primary">Guardar registro</button>
+    <button (click)="onSubmit()" type="button" class="btn btn-primary">
+      Guardar registro
+    </button>
   </div>
   <div></div>
   <button ngClass="btn btn-primary">Datos de facturacion</button>

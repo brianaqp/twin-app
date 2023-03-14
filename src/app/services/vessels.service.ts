@@ -17,7 +17,8 @@ export class VesselsService {
   post(id: string, item: any): Observable<any> {
     const body = {
       id: id,
-      values: item,
+      shipParticulars: item,
+      registers: [],
     };
     return this.http.post<any>(this.api, body);
   }

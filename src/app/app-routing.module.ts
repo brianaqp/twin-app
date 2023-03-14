@@ -21,6 +21,20 @@ const routes: Routes = [
         m => m.NuevoRegistroModule
       ),
   },
+  {
+    path: 'repositorio',
+    loadChildren: () =>
+      import('./modules/repositorio/repositorio.module').then(
+        m => m.RepositorioModule
+      ),
+  },
+  {
+    path: 'reporte-de-llegada',
+    loadChildren: () =>
+      import('./modules/reporte-de-llegada/reporte-de-llegada.module').then(
+        m => m.ReporteDeLlegadaModule
+      ),
+  },
 ];
 
 @NgModule({
